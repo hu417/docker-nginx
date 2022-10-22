@@ -1,10 +1,4 @@
 # About this Repo
 
-This is the Git repo of the official Docker image for [nginx](https://registry.hub.docker.com/_/nginx/). See the
-Hub page for the full readme on how to use the Docker image and for information
-regarding contributing and issues.
-
-The full readme is generated over in [docker-library/docs](https://github.com/docker-library/docs),
-specifically in [docker-library/docs/nginx](https://github.com/docker-library/docs/tree/master/nginx).
-
-The changelog for NGINX releases is available at [nginx.org changes page](https://nginx.org/en/CHANGES).
+修改Dockerfile文件，将ENTRYPOINT ["/docker-entrypoint.sh"]改为ENTRYPOINT ["sh", "/docker-entrypoint.sh"]，此处不改的话镜像启动时会报错。
+制作镜像，docker build -t nginx:1.23.1-0.2 -f Dockerfile .
